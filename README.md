@@ -2,7 +2,6 @@
 
 ⚠️ **Important Notice**  
 This project is **for study, learning, and technical experimentation purposes only**.  
-It is **not affiliated with Riot Games, Tracker Network, or Blitz.gg** in any official way.
 
 ---
 
