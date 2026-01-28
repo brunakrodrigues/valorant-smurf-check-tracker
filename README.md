@@ -22,7 +22,8 @@ Colunas obrigatórias:
 Exemplo:
 | nick | tag |
 |------|-----|
-| boo  | 1204 |
+| nickname  | 1234 |
+| nickname  | BR1 |
 
 ## Observação importante
 A estrutura do payload pode variar; por isso o parser é tolerante e tenta
