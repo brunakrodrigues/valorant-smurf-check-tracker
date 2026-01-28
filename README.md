@@ -1,30 +1,56 @@
-# VALORANT Smurf Checker (Tracker Network API)
+# Valorant Smurf Checker (Study Project)
 
-## O que é
-App em Streamlit: você sobe uma planilha com `nick` e `tag` (Riot ID),
-o app consulta o endpoint de profile do tracker.gg e tenta inferir:
+⚠️ **Important Notice**  
+This project is **for study, learning, and technical experimentation purposes only**.  
+It is **not affiliated with Riot Games, Tracker Network, or Blitz.gg** in any official way.
 
-- Maior elo (tier) nos **últimos 3 atos** detectados no payload
-- Um "elo atual" estimado a partir do segmento competitivo mais recente
-- Flag `suspeito de smurf` por heurística (ajustável na UI)
+---
 
-## Rodar
+## 📘 About the Project
+
+This is a **Python + Streamlit** application that analyzes VALORANT player data using the  
+**Tracker Network API** to **study ranking patterns** and **identify potential smurf behavior** based on:
+
+- Highest rank achieved in the last 3 acts
+- Estimated current rank
+- Rank gap between historical peak and current placement
+
+👉 **Results are heuristic-based and not definitive.**  
+They should not be used to judge, report, or penalize players.
+
+---
+
+## 🎯 Project Goals
+
+- API integration study (third-party APIs)
+- Semi-structured JSON data parsing
+- Simple heuristic-based behavior analysis
+- Spreadsheet upload and batch processing
+- Data visualization with Streamlit
+
+---
+
+## 🧪 Limitations
+
+- “Smurf” detection is **heuristic**, not official
+- Depends on the availability and structure of Tracker API responses
+- Act/season detection is inferred and may be imperfect
+- Does not replace official Riot Games data or decisions
+
+---
+
+## 🔑 Requirements
+
+- Python 3.10+
+- **Tracker Network API Key (TRN-Api-Key)**
+
+> The API key must be entered manually in the app UI  
+> **Never hardcode your API key in the source code**
+
+---
+
+## ▶️ Running the Project Locally
+
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
-```
-
-## Planilha
-Colunas obrigatórias:
-- nick
-- tag
-
-Exemplo:
-| nick | tag |
-|------|-----|
-| nickname  | 1234 |
-| nickname  | BR1 |
-
-## Observação importante
-A estrutura do payload pode variar; por isso o parser é tolerante e tenta
-inferir acts/seasons via `metadata` dos `segments`.
